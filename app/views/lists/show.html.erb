@@ -1,4 +1,5 @@
 <h1><%= @list.name %></h1>
+<%= cl_image_tag @list.poster.key, height: 300, width: 400, crop: :fill %>
 
 <div id="teams">
   <% @list.movies.each do |movie| %>
@@ -7,8 +8,6 @@
     <%= movie.poster_url %>
     <br>
     <%= movie.rating %>
-
-    <%= cl_image_tag @list.poster.key, height: 300, width: 400, crop: :fill %>
 
     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
     <%= link_to 'Delete Bookmark',
