@@ -8,6 +8,8 @@
     <br>
     <%= movie.rating %>
 
+    <%= cl_image_tag @list.poster.key, height: 300, width: 400, crop: :fill %>
+
     <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
     <%= link_to 'Delete Bookmark',
         bookmark_path(bookmark),
