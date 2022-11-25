@@ -3,6 +3,7 @@
 <div id="lists">
   <% @lists.each do |list| %>
     <%= render list %>
+    <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
     <p>
       <%= link_to "Show this category", list %>
     </p>
